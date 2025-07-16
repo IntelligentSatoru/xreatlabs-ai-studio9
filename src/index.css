@@ -2,41 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* XreatLabs Design System - Minecraft meets AI magic */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core Brand Colors */
+    --background: 210 17% 8%;
+    --foreground: 210 20% 96%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Glass morphism base */
+    --card: 210 17% 12%;
+    --card-foreground: 210 20% 96%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 210 17% 12%;
+    --popover-foreground: 210 20% 96%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* XreatLabs Brand Colors - Minecraft Green + AI Purple */
+    --primary: 142 76% 55%;
+    --primary-foreground: 210 17% 8%;
+    --primary-glow: 142 76% 65%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 265 84% 65%;
+    --secondary-foreground: 210 20% 96%;
+    --secondary-glow: 265 84% 75%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 17% 16%;
+    --muted-foreground: 210 15% 70%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 93% 68%;
+    --accent-foreground: 210 17% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 96%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 210 17% 20%;
+    --input: 210 17% 16%;
+    --ring: 142 76% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom XreatLabs Variables */
+    --minecraft-green: 142 76% 55%;
+    --ai-purple: 265 84% 65%;
+    --coding-orange: 35 91% 65%;
+    --terminal-green: 120 100% 50%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+    --gradient-glow: linear-gradient(135deg, hsl(var(--primary-glow)), hsl(var(--secondary-glow)));
+    
+    /* Glows and Shadows */
+    --glow-primary: 0 0 30px hsl(var(--primary) / 0.3);
+    --glow-secondary: 0 0 30px hsl(var(--secondary) / 0.3);
+    --glass-shadow: 0 8px 32px hsl(var(--background) / 0.5);
+    --glass-border: 1px solid hsl(var(--border) / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +124,124 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
   }
+}
+
+@layer components {
+  /* Glass morphism components */
+  .glass-card {
+    @apply backdrop-blur-xl bg-card/80 border border-border/20 shadow-lg;
+  }
+  
+  .glass-button {
+    @apply backdrop-blur-md bg-primary/20 border border-primary/30 hover:bg-primary/30 hover:shadow-lg;
+    transition: var(--transition-smooth);
+  }
+  
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-secondary {
+    box-shadow: var(--glow-secondary);
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Animated elements */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-terminal-cursor {
+    animation: terminal-cursor 1s step-end infinite;
+  }
+  
+  /* Hover effects */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-1 shadow-2xl;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: var(--glow-primary);
+  }
+  
+  /* Code styling */
+  .code-block {
+    @apply bg-muted/50 border border-border rounded-lg p-4 font-mono text-sm;
+  }
+  
+  .terminal {
+    @apply bg-background border border-primary/30 rounded-lg p-4 font-mono text-terminal-green;
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+  }
+}
+
+@layer utilities {
+  /* Custom utilities */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .gradient-bg {
+    background: var(--gradient-hero);
+  }
+  
+  .glass-bg {
+    background: var(--gradient-card);
+  }
+}
+
+/* Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: var(--glow-primary); }
+  50% { box-shadow: var(--glow-secondary); }
+}
+
+@keyframes terminal-cursor {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary/70;
 }
