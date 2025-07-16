@@ -51,8 +51,8 @@ const Contact = () => {
       icon: Mail,
       title: 'Email',
       description: 'Get in touch via email',
-      value: 'hello@xreatlabs.com',
-      action: () => window.open('mailto:hello@xreatlabs.com', '_blank'),
+      value: 'official@xreatlabs.space',
+      action: () => window.open('mailto:official@xreatlabs.space', '_blank'),
       color: 'text-primary'
     },
     {

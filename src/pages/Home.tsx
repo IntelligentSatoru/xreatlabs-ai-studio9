@@ -15,7 +15,7 @@ const Home = () => {
             {/* Animated Logo */}
             <div className="mb-8 inline-block">
               <div className="w-20 h-20 bg-gradient-hero rounded-2xl flex items-center justify-center animate-float glow-primary">
-                <Code className="w-10 h-10 text-primary-foreground" />
+                <Github className="w-10 h-10 text-primary-foreground" />
               </div>
             </div>
 
@@ -24,11 +24,11 @@ const Home = () => {
               <br />
               <span className="text-foreground">Where Minecraft meets</span>
               <br />
-              <span className="text-primary">lovable AI magic</span>
+              <span className="text-primary">Xreat</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in">
-              Expert Minecraft coders and scripters crafting the future of gaming with AI-powered solutions
+              Expert Minecraft coders and scripters crafting the future of gaming with innovative solutions
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in">
@@ -39,7 +39,7 @@ const Home = () => {
               >
                 <Link to="/projects">
                   <Play className="w-5 h-5 mr-2" />
-                  Explore Our Mods
+                  Explore Our Projects
                 </Link>
               </Button>
               <Button
@@ -67,7 +67,7 @@ const Home = () => {
               Why Choose XreatLabs?
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              We combine cutting-edge AI technology with deep Minecraft expertise to create extraordinary gaming experiences
+              We combine cutting-edge technology with deep Minecraft expertise to create extraordinary gaming experiences
             </p>
           </div>
 
@@ -158,7 +158,7 @@ const Home = () => {
             Ready to Transform Your Minecraft Experience?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Let's collaborate and bring your Minecraft vision to life with our expertise and AI magic
+            Let's collaborate and bring your Minecraft vision to life with our expertise and innovation
           </p>
           <Button
             size="lg"

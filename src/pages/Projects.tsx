@@ -146,7 +146,7 @@ const Projects = () => {
 
   const projectTypes = [
     { value: 'all', label: 'All Projects' },
-    { value: 'mods', label: 'Mods & Plugins' },
+    { value: 'mods', label: 'Our Projects & Plugins' },
     { value: 'tools', label: 'Tools & Utilities' },
     { value: 'ai', label: 'AI & Chatbots' }
   ];
@@ -173,7 +173,7 @@ const Projects = () => {
               Our Projects
             </h1>
             <p className="text-xl text-muted-foreground mb-8">
-              Explore our collection of innovative Minecraft mods, plugins, and AI-powered tools
+              Explore our collection of innovative Minecraft projects, plugins, and development tools
             </p>
           </div>
         </div>

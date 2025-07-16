@@ -1,4 +1,4 @@
-import { Github, MessageCircle, Mail, Code } from 'lucide-react';
+import { Github, MessageCircle, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
@@ -12,12 +12,12 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-hero rounded-lg flex items-center justify-center">
-                <Code className="w-5 h-5 text-primary-foreground" />
+                <Github className="w-5 h-5 text-primary-foreground" />
               </div>
               <span className="text-lg font-bold gradient-text">XreatLabs</span>
             </div>
             <p className="text-muted-foreground">
-              Where Minecraft meets lovable AI magic. Expert coders crafting the future of gaming.
+              Where Minecraft meets Xreat. Expert coders crafting the future of gaming.
             </p>
           </div>
 
@@ -36,7 +36,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-foreground">Services</h3>
             <ul className="space-y-2">
-              <li><span className="text-muted-foreground">Custom Minecraft Mods</span></li>
+              <li><span className="text-muted-foreground">Custom Minecraft Projects</span></li>
               <li><span className="text-muted-foreground">Server Plugins</span></li>
               <li><span className="text-muted-foreground">AI Integration</span></li>
               <li><span className="text-muted-foreground">Code Consulting</span></li>
@@ -67,7 +67,7 @@ const Footer = () => {
                 variant="outline"
                 size="sm"
                 className="glass-button border-primary/30 hover:glow-primary"
-                onClick={() => window.open('mailto:hello@xreatlabs.com', '_blank')}
+                onClick={() => window.open('mailto:official@xreatlabs.space', '_blank')}
               >
                 <Mail className="w-4 h-4" />
               </Button>
@@ -77,7 +77,7 @@ const Footer = () => {
 
         <div className="border-t border-primary/20 mt-8 pt-8 text-center">
           <p className="text-muted-foreground">
-            © {currentYear} XreatLabs. All rights reserved. Built with 💜 and AI magic.
+            © {currentYear} XreatLabs. All rights reserved. Built with 💜 and innovation.
           </p>
         </div>
       </div>

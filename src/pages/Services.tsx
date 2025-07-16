@@ -6,7 +6,7 @@ const Services = () => {
   const services = [
     {
       icon: Code,
-      title: 'Custom Minecraft Mods',
+      title: 'Custom Minecraft Projects',
       description: 'Tailored modifications that enhance gameplay with unique features and mechanics',
       features: [
         'Custom block and item creation',
@@ -15,7 +15,7 @@ const Services = () => {
         'Cross-platform compatibility',
         'Regular updates and support'
       ],
-      price: 'Starting at $500',
+      price: 'Free',
       color: 'text-primary'
     },
     {
@@ -29,7 +29,7 @@ const Services = () => {
         'Anti-griefing protection',
         'Database integration'
       ],
-      price: 'Starting at $300',
+      price: 'Free',
       color: 'text-secondary'
     },
     {
@@ -43,7 +43,7 @@ const Services = () => {
         'Predictive analytics',
         'Natural language processing'
       ],
-      price: 'Starting at $800',
+      price: 'Free',
       color: 'text-accent'
     },
     {
@@ -57,7 +57,7 @@ const Services = () => {
         'Performance profilers',
         'Documentation generators'
       ],
-      price: 'Starting at $200',
+      price: 'Free',
       color: 'text-primary'
     }
   ];
@@ -151,14 +151,14 @@ const Services = () => {
                         </li>
                       ))}
                     </ul>
-                    <div className="flex items-center justify-between">
-                      <div className="text-2xl font-bold text-primary">{service.price}</div>
+                    <div className="text-center">
+                      <div className="text-2xl font-bold text-primary mb-4">Free</div>
                       <Button
                         variant="outline"
                         className="glass-button border-primary/30 hover:glow-primary"
                         onClick={() => window.location.href = '/contact'}
                       >
-                        Get Quote
+                        Get Started
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </Button>
                     </div>
