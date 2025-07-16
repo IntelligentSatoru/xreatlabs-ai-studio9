@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, MessageCircle, Github, MapPin, Send, CheckCircle } from 'lucide-react';
+import { Mail, MessageCircle, Github, MapPin, Send, CheckCircle, Shield, ExternalLink, Globe, Gamepad2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -16,6 +16,12 @@ const Contact = () => {
     projectType: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [nexAuthLinks, setNexAuthLinks] = useState({
+    modrinth: 'https://modrinth.com/user/xreatlabs',
+    github: 'https://github.com/xreatlabs',
+    spigotmc: 'https://www.spigotmc.org/members/xreatlabs.1234567',
+    discord: 'https://discord.gg/xreatlabs'
+  });
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -82,6 +88,45 @@ const Contact = () => {
     'Other'
   ];
 
+  const nexAuthPlatforms = [
+    {
+      icon: Globe,
+      title: 'Modrinth',
+      description: 'Discover our mods',
+      value: nexAuthLinks.modrinth,
+      action: () => window.open(nexAuthLinks.modrinth, '_blank'),
+      color: 'text-green-500',
+      bgColor: 'bg-green-500/10'
+    },
+    {
+      icon: Github,
+      title: 'GitHub',
+      description: 'View our repositories',
+      value: nexAuthLinks.github,
+      action: () => window.open(nexAuthLinks.github, '_blank'),
+      color: 'text-primary',
+      bgColor: 'bg-primary/10'
+    },
+    {
+      icon: Gamepad2,
+      title: 'SpigotMC',
+      description: 'Check our plugins',
+      value: nexAuthLinks.spigotmc,
+      action: () => window.open(nexAuthLinks.spigotmc, '_blank'),
+      color: 'text-orange-500',
+      bgColor: 'bg-orange-500/10'
+    },
+    {
+      icon: MessageCircle,
+      title: 'Discord',
+      description: 'Join our community',
+      value: nexAuthLinks.discord,
+      action: () => window.open(nexAuthLinks.discord, '_blank'),
+      color: 'text-indigo-500',
+      bgColor: 'bg-indigo-500/10'
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -117,6 +162,58 @@ const Contact = () => {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NexAuth Section */}
+      <section className="py-20 bg-gradient-to-b from-transparent to-primary/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center mb-4">
+                <Shield className="w-8 h-8 text-primary mr-3" />
+                <h2 className="text-3xl md:text-4xl font-bold gradient-text">NexAuth</h2>
+              </div>
+              <p className="text-xl text-muted-foreground">
+                Connect with us across all major platforms
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {nexAuthPlatforms.map((platform, index) => (
+                <Card
+                  key={index}
+                  className="glass-card hover-lift hover:glow-primary transition-all duration-300 cursor-pointer group"
+                  onClick={platform.action}
+                >
+                  <CardContent className="p-6 text-center">
+                    <div className={`w-16 h-16 ${platform.bgColor} rounded-2xl flex items-center justify-center mx-auto mb-4 transition-transform duration-300 group-hover:scale-110`}>
+                      <platform.icon className={`w-8 h-8 ${platform.color}`} />
+                    </div>
+                    <h3 className="text-lg font-semibold mb-2 text-foreground">{platform.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-3">{platform.description}</p>
+                    <div className="flex items-center justify-center space-x-2">
+                      <span className="text-xs text-primary font-mono truncate max-w-[120px]">
+                        {platform.value.replace('https://', '')}
+                      </span>
+                      <ExternalLink className="w-3 h-3 text-muted-foreground" />
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <Card className="glass-card inline-block">
+                <CardContent className="p-4">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <span className="text-sm text-muted-foreground">All platforms actively maintained</span>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
