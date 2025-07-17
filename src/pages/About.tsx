@@ -35,10 +35,10 @@ const About = () => {
           name: 'XreatLabs',
           bio: 'Expert Minecraft coders and scripters crafting the future of gaming with AI-powered solutions',
           avatar_url: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=400&fit=crop',
-          followers: 150,
+          followers: 85,
           following: 75,
           public_repos: 25,
-          created_at: '2020-01-01T00:00:00Z',
+          created_at: '2024-01-01T00:00:00Z',
           location: 'Global',
           blog: 'https://xreatlabs.com',
           company: 'XreatLabs'
@@ -53,33 +53,27 @@ const About = () => {
 
   const milestones = [
     {
-      year: '2020',
+      year: '2024',
       title: 'XreatLabs Founded',
-      description: 'Started as a small team of passionate Minecraft developers',
+      description: 'Started as a passionate team of Minecraft developers with fresh ideas',
       icon: '🚀'
     },
     {
-      year: '2021',
-      title: 'First Major Plugin',
-      description: 'Released our breakthrough AI-powered chat plugin',
+      year: '2024',
+      title: 'First Projects',
+      description: 'Launched initial AI-powered Minecraft development tools',
       icon: '🤖'
     },
     {
-      year: '2022',
-      title: 'Community Growth',
-      description: 'Reached 10,000+ downloads across all our projects',
+      year: '2024',
+      title: 'Community Building',
+      description: 'Growing our developer community to nearly 100 dedicated members',
       icon: '📈'
     },
     {
-      year: '2023',
-      title: 'AI Integration',
-      description: 'Pioneered AI-powered Minecraft server management',
-      icon: '🧠'
-    },
-    {
       year: '2024',
-      title: 'Global Recognition',
-      description: 'Featured in top Minecraft development communities',
+      title: 'Future Ready',
+      description: 'Preparing next-generation Minecraft solutions for 2025',
       icon: '🌟'
     }
   ];
@@ -105,15 +99,35 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-b from-primary/10 to-transparent">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
+      <section className="relative py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(120,119,198,0.3),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,215,0,0.2),transparent_50%)]"></div>
+        
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/20 mb-8">
+              <span className="text-sm font-medium text-primary">✨ Founded in 2024</span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight">
               Meet XreatLabs
             </h1>
-            <p className="text-xl text-muted-foreground mb-8">
-              Expert Minecraft coders & scripters pushing the boundaries of gaming with AI
+            
+            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+              Next-generation Minecraft developers crafting innovative solutions with cutting-edge technology
             </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <div className="flex items-center px-6 py-3 rounded-full bg-accent/10 backdrop-blur-sm border border-accent/20">
+                <Users className="w-5 h-5 text-accent mr-2" />
+                <span className="text-accent font-medium">Growing to 100 members</span>
+              </div>
+              <div className="flex items-center px-6 py-3 rounded-full bg-secondary/10 backdrop-blur-sm border border-secondary/20">
+                <Code className="w-5 h-5 text-secondary mr-2" />
+                <span className="text-secondary font-medium">Open Source First</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
